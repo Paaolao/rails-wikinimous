@@ -1,5 +1,11 @@
-<h1>New article</h1>
-<br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-b-black-solid border-bottom-2-dark">
+  <H1 id="title" class="text-uppercase">New article</H1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="articles_path" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <%= link_to articles_path, class:"btn btn-light" do %>
+    <i class="fa-solid fa-house"></i>
+    <% end %>
+  </button>
+</nav>
 <%= form_for(@article) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -7,7 +13,3 @@
   <%= f.text_field :content %>
   <%= f.submit %>
 <% end %>
-
- <%= link_to articles_path, class:"btn btn-light" do %>
- <i class="fa-solid fa-house"></i>
- <% end %>

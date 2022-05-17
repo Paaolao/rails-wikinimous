@@ -1,11 +1,16 @@
-<h1>My article </h1>
-<br>
-<h2><%= @article.title %></h2>
-<p><%= @article.content %></p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-b-black-solid border-bottom-2-dark m-20">
+  <H1 id="title" class="text-uppercase">My article</H1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="articles_path" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <%= link_to articles_path, class:"btn btn-light" do %>
+    <i class="fa-solid fa-house"></i>
+    <% end %>
+  </button>
+</nav>
 
- <%= link_to articles_path, class:"btn btn-light" do %>
- <i class="fa-solid fa-house"></i>
- <% end %>
+<div class="card container d-flex justify-content-center">
+<h2 class="m-10 card-title"><%= @article.title %></h2>
+<p class="card-body"><%= @article.content %></p>
+</div>
 
 <%= link_to edit_article_path, class:"btn btn-light" do %>
 <i class="fa-solid fa-pen"></i>

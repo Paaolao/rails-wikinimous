@@ -1,16 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-b-black-solid">
-  <H1>Wikinimous</H1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-b-black-solid border-bottom-2-dark">
+  <H1 id="title">Wikinimous</H1>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="articles_path" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <%= link_to new_article_path, class:"btn btn-light" do %>
+    <i class="fa-solid fa-square-plus"></i>
+    <% end %>
   </button>
 </nav>
 <br>
-<ul class="list-group list-group-flush">
+<ul class="list-group list-group-flush font-size-50">
   <% @articles.each do |article| %>
-   <li class="list-group-item d-flex justify-content-center font-weight-bold list-group-item-action"><%= link_to article.title, article_path(article)%></li>
+   <li class="list-group-item d-flex justify-content-center font-weight-bold list-group-item-action list-light"><%= link_to article.title, article_path(article)%></li>
   <% end %>
 </ul>
-
-<%= link_to new_article_path, class:"btn btn-light" do %>
-<i class="fa-solid fa-square-plus"></i>
-<% end %>
